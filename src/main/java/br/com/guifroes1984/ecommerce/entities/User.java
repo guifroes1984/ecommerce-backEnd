@@ -1,0 +1,30 @@
+package br.com.guifroes1984.ecommerce.entities;
+
+import br.com.guifroes1984.ecommerce.enums.UserRole;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name = "users")
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String nome;
+
+    private String email;
+
+    private String password;
+
+    private UserRole userRole;
+
+    private byte[] img;
+
+}
