@@ -27,7 +27,7 @@ public class WebSecurityConfigutation {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/authenticate", "/inscrever-se").permitAll()
+                .requestMatchers("/autenticar", "/inscrever-se").permitAll()
                 .and()
                 .authorizeHttpRequests().requestMatchers("/api/**")
                 .authenticated().and()
